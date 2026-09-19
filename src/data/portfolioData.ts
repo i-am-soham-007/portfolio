@@ -375,6 +375,34 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "codelens",
+    title: "CodeLens — Developer Tools Suite",
+    category: "fullstack",
+    categoryLabel: "Open Source Project",
+    tagline: "Free online JSON viewer, code compare, and developer productivity utilities.",
+    description: "CodeLens helps engineers format JSON, inspect payloads, compare code changes, and streamline API and debugging workflows with browser-based tools designed for speed and privacy.",
+    problem: "Developers often need to quickly format JSON, validate API payloads, or compare code snippets without downloading heavy desktop applications or compromising privacy by sending code to remote servers.",
+    solution: "Built a suite of developer utilities including a JSON Viewer, Code Compare tool, and JWT Decoder that run entirely in the browser, ensuring high performance and data privacy.",
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    integrations: ["Monaco Editor", "Vercel Hosting", "Browser Local Storage"],
+    features: [
+      "Online JSON Viewer with beautifier, minifier, and tree inspector",
+      "Online Code Compare with side-by-side and inline unified diffs",
+      "JWT Decoder for inspecting claims and signatures securely",
+      "Privacy-first architecture running entirely in the local browser"
+    ],
+    role: "Full-Stack Engineer — Designed and developed the complete developer tools suite.",
+    liveUrl: "https://codelens-dev.vercel.app/",
+    githubUrl: "https://github.com/i-am-soham-007/codelens",
+    featured: true,
+    status: "live",
+    architectureSteps: [
+      { title: "User Interface", description: "Responsive tools built with React and Tailwind CSS", tech: "Next.js", type: "client" },
+      { title: "Code Editor", description: "Integrated Monaco Editor for syntax highlighting and diffing", tech: "Monaco Editor", type: "third-party" },
+      { title: "Local Processing", description: "All formatting and validation runs in-browser for privacy", tech: "Web APIs", type: "gateway" }
+    ]
+  },
+  {
     id: "subh-labh-global-cargo",
     title: "Subh Labh Global Cargo — Enterprise Logistics Web Portal",
     category: "fullstack",

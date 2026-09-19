@@ -21,13 +21,11 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
     hidden: { 
       opacity: 0, 
       y: 40,
-      filter: 'blur(8px)',
       scale: 0.97
     },
     visible: { 
       opacity: 1, 
       y: 0,
-      filter: 'blur(0px)',
       scale: 1,
       transition: { 
         duration: 0.85, 
@@ -39,13 +37,11 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
   circuit: {
     hidden: { 
       opacity: 0, 
-      x: -30,
-      filter: 'blur(6px)'
+      x: -30
     },
     visible: { 
       opacity: 1, 
       x: 0,
-      filter: 'blur(0px)',
       transition: { 
         duration: 0.9, 
         ease: [0.22, 1, 0.36, 1],
@@ -90,13 +86,11 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
   timeline: {
     hidden: { 
       opacity: 0, 
-      x: 30,
-      filter: 'blur(4px)'
+      x: 30
     },
     visible: { 
       opacity: 1, 
       x: 0,
-      filter: 'blur(0px)',
       transition: { 
         duration: 0.85, 
         ease: [0.25, 1, 0.5, 1],
@@ -136,14 +130,8 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
     offset: ['start end', 'end start']
   });
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 20,
-    restDelta: 0.001
-  });
-
-  const backgroundY = useTransform(smoothProgress, [0, 1], ['-6%', '6%']);
-  const beamOpacity = useTransform(smoothProgress, [0, 0.3, 0.7, 1], [0, 0.7, 0.7, 0]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+  const beamOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.7, 0.7, 0]);
 
   return (
     <motion.section
@@ -153,6 +141,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
       whileInView="visible"
       viewport={{ once: true, margin: '-80px' }}
       variants={themeVariants[theme]}
+      style={{ willChange: "transform, opacity" }}
       className={`relative py-24 sm:py-32 overflow-hidden ${className}`}
     >
       {/* Dynamic Cyber Tech Ambient Elements per section theme */}
