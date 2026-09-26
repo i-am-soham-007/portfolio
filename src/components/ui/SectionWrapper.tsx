@@ -21,11 +21,13 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
     hidden: { 
       opacity: 0, 
       y: 40,
+      filter: 'blur(8px)',
       scale: 0.97
     },
     visible: { 
       opacity: 1, 
       y: 0,
+      filter: 'blur(0px)',
       scale: 1,
       transition: { 
         duration: 0.85, 
@@ -37,11 +39,13 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
   circuit: {
     hidden: { 
       opacity: 0, 
-      x: -30
+      x: -30,
+      filter: 'blur(6px)'
     },
     visible: { 
       opacity: 1, 
       x: 0,
+      filter: 'blur(0px)',
       transition: { 
         duration: 0.9, 
         ease: [0.22, 1, 0.36, 1],
@@ -86,11 +90,13 @@ const themeVariants: Record<SectionAnimationTheme, Variants> = {
   timeline: {
     hidden: { 
       opacity: 0, 
-      x: 30
+      x: 30,
+      filter: 'blur(4px)'
     },
     visible: { 
       opacity: 1, 
       x: 0,
+      filter: 'blur(0px)',
       transition: { 
         duration: 0.85, 
         ease: [0.25, 1, 0.5, 1],
@@ -130,8 +136,14 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
     offset: ['start end', 'end start']
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
-  const beamOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.7, 0.7, 0]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 20,
+    restDelta: 0.001
+  });
+
+  const backgroundY = useTransform(smoothProgress, [0, 1], ['-6%', '6%']);
+  const beamOpacity = useTransform(smoothProgress, [0, 0.3, 0.7, 1], [0, 0.7, 0.7, 0]);
 
   return (
     <motion.section
@@ -141,7 +153,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
       whileInView="visible"
       viewport={{ once: true, margin: '-80px' }}
       variants={themeVariants[theme]}
-      style={{ willChange: "transform, opacity" }}
       className={`relative py-24 sm:py-32 overflow-hidden ${className}`}
     >
       {/* Dynamic Cyber Tech Ambient Elements per section theme */}
@@ -154,9 +165,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             className="absolute -top-32 right-10 w-96 h-96 bg-cyan-500/[0.03] rounded-full blur-3xl" 
           />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
-          <div className="absolute right-6 top-8 font-mono text-[10px] text-cyan-500/20 uppercase tracking-widest hidden md:block select-none">
-            [SYS_NODE // 01_ABOUT_SEC]
-          </div>
         </div>
       )}
 
@@ -174,9 +182,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             transition={{ repeat: Infinity, duration: 6, ease: 'linear' }}
             className="absolute top-0 left-0 w-48 h-[1px] bg-gradient-to-r from-transparent via-indigo-400 to-transparent opacity-60"
           />
-          <div className="absolute left-6 top-8 font-mono text-[10px] text-indigo-400/20 uppercase tracking-widest hidden md:block select-none">
-            [ARCH_ENGINE // 02_BACKEND_CORE]
-          </div>
         </div>
       )}
 
@@ -188,9 +193,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/[0.02] rounded-full blur-3xl" 
           />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
-          <div className="absolute right-8 top-8 font-mono text-[10px] text-emerald-500/20 uppercase tracking-widest hidden md:block select-none">
-            [STACK_SYNC // 03_TECH_SPEC]
-          </div>
         </div>
       )}
 
@@ -207,9 +209,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
             className="absolute top-0 right-0 w-64 h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-60"
           />
-          <div className="absolute left-8 top-8 font-mono text-[10px] text-purple-400/20 uppercase tracking-widest hidden md:block select-none">
-            [PROD_DEPLOY // 04_FEATURED_BUILDS]
-          </div>
         </div>
       )}
 
@@ -221,9 +220,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             className="absolute bottom-10 right-10 w-80 h-80 bg-blue-500/[0.03] rounded-full blur-3xl" 
           />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-blue-500/25 to-transparent" />
-          <div className="absolute right-8 top-8 font-mono text-[10px] text-blue-400/20 uppercase tracking-widest hidden md:block select-none">
-            [TRACK_RECORD // 05_DEV_HISTORY]
-          </div>
         </div>
       )}
 
@@ -235,9 +231,6 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/[0.03] rounded-full blur-3xl" 
           />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
-          <div className="absolute right-8 top-8 font-mono text-[10px] text-cyan-400/20 uppercase tracking-widest hidden md:block select-none">
-            [BEACON_ONLINE // 06_INQUIRY_SOCKET]
-          </div>
         </div>
       )}
 

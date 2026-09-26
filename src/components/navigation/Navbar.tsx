@@ -20,27 +20,19 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    let ticking = false;
-    
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 30);
 
-          // Determine active section
-          const sections = NAV_LINKS.map(link => link.href.substring(1));
-          const scrollPosition = window.scrollY + 250;
+      // Determine active section
+      const sections = NAV_LINKS.map(link => link.href.substring(1));
+      const scrollPosition = window.scrollY + 250;
 
-          for (let i = sections.length - 1; i >= 0; i--) {
-            const sectionEl = document.getElementById(sections[i]);
-            if (sectionEl && sectionEl.offsetTop <= scrollPosition) {
-              setActiveSection(sections[i]);
-              break;
-            }
-          }
-          ticking = false;
-        });
-        ticking = true;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionEl = document.getElementById(sections[i]);
+        if (sectionEl && sectionEl.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
       }
     };
 

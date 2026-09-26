@@ -1,0 +1,102 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2476 >>
+stream
+BT
+/F2 22 Tf
+50 740 Td
+(SOHAM RATHOD) Tj
+0 -24 Td
+/F1 12 Tf
+(Senior Software Engineer | Node.js Backend Engineer | Full-Stack Developer) Tj
+0 -18 Td
+/F1 10 Tf
+(Email: rsoham00@gmail.com   |   Phone: +91 9265243821   |   GitHub: github.com/i-am-soham-007) Tj
+0 -15 Td
+(LinkedIn: linkedin.com/in/soham-rathod   |   Location: Remote / Global) Tj
+0 -24 Td
+/F2 13 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -16 Td
+/F1 10 Tf
+(Senior Software Engineer with 5+ years of specialized experience in high-performance Node.js &) Tj
+0 -14 Td
+(TypeScript backend architectures, RESTful API design, and scalable full-stack web applications.) Tj
+0 -14 Td
+(Proven expertise in architecting resilient microservices, MongoDB aggregations, and webhook pipelines.) Tj
+0 -24 Td
+/F2 13 Tf
+(CORE TECHNICAL SKILLS) Tj
+0 -16 Td
+/F1 10 Tf
+(Backend: Node.js, Express.js, NestJS, TypeScript, RESTful APIs, Microservices, Event Loops, Streams) Tj
+0 -14 Td
+(Databases: MongoDB, Mongoose, Aggregations, Compound Indexes, PostgreSQL, MySQL) Tj
+0 -14 Td
+(Frontend: Next.js 14/15, React.js, Tailwind CSS, Bootstrap, JavaScript ES6+, HTML5, CSS3) Tj
+0 -14 Td
+(Integrations: Webhook Pipelines, Payment Gateways, Cryptographic Signatures, JWT, RBAC) Tj
+0 -14 Td
+(DevOps & Tooling: Git, GitHub, Postman, CI/CD, Linux, Docker, Automated Testing) Tj
+0 -24 Td
+/F2 13 Tf
+(PROFESSIONAL EXPERIENCE) Tj
+0 -18 Td
+/F2 11 Tf
+(Senior Software Engineer (Backend & Full-Stack) | 2023 - Present) Tj
+0 -15 Td
+/F1 10 Tf
+(- Architected and deployed high-performance Node.js & Express backend services under real traffic.) Tj
+0 -14 Td
+(- Designed secure REST APIs with JWT authentication, role-based authorization, and DTO validation.) Tj
+0 -14 Td
+(- Implemented payment gateway integrations with signature-verified webhooks and idempotency.) Tj
+0 -14 Td
+(- Optimized MongoDB aggregation pipelines and compound indexes, improving latency by up to 40%.) Tj
+0 -14 Td
+(- Developed modern Next.js and React full-stack client interfaces with responsive UX.) Tj
+0 -24 Td
+/F2 13 Tf
+(FEATURED CLIENT PROJECTS) Tj
+0 -18 Td
+/F2 11 Tf
+(Subh Labh Global Cargo (subhlabhgc.com) - Enterprise Logistics Web Portal) Tj
+0 -15 Td
+/F1 10 Tf
+(- Full-stack web integration and automated inquiry pipeline for international freight forwarding.) Tj
+0 -14 Td
+(- Delivered zero-downtime deployment, interactive freight catalogs, and WhatsApp Business API.) Tj
+0 -14 Td
+(- Client Rating: 5.0 / 5.0 (Sanket Patel, Founder & Director: Amazing work, on time delivered.)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000002779 00000 n 
+0000002849 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2924
+%%EOF

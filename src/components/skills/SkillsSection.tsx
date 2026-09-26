@@ -15,49 +15,26 @@ interface TechSkill {
   isFeatured?: boolean;
 }
 
+// Unified progress bar gradient copied directly from PHP & CodeIgniter
+const PROGRESS_BAR_GRADIENT = 'linear-gradient(90deg, #64748b 0%, #94a3b8 50%, #cbd5e1 100%)';
+
 const TECH_SKILLS: TechSkill[] = [
-  {
-    name: 'MERN Stack (MongoDB, Express, React, Node)',
-    category: 'Full-Stack Architecture',
-    proficiency: 96,
-    years: '5+ Yrs',
-    level: 'Expert',
-    gradient: 'linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%)',
-    isFeatured: true,
-  },
   {
     name: 'Node.js & Express.js',
     category: 'Backend & High-Throughput APIs',
     proficiency: 98,
     years: '5+ Yrs',
     level: 'Expert',
-    gradient: 'linear-gradient(90deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
     isFeatured: true,
-  },
-  {
-    name: 'Next.js (App Router, SSR & Server Actions)',
-    category: 'React Production Framework',
-    proficiency: 92,
-    years: '3+ Yrs',
-    level: 'Advanced',
-    gradient: 'linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)',
-    isFeatured: true,
-  },
-  {
-    name: 'NestJS (Enterprise Architecture & DI)',
-    category: 'Microservices & Enterprise Backend',
-    proficiency: 88,
-    years: '3+ Yrs',
-    level: 'Advanced',
-    gradient: 'linear-gradient(90deg, #ef4444 0%, #f43f5e 50%, #ec4899 100%)',
   },
   {
     name: 'TypeScript (Strict Type-Safety & DTOs)',
-    category: 'Full-Stack Type System',
-    proficiency: 92,
+    category: 'Backend Type-Safety & Contracts',
+    proficiency: 94,
     years: '4+ Yrs',
     level: 'Expert',
-    gradient: 'linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
     isFeatured: true,
   },
   {
@@ -66,7 +43,7 @@ const TECH_SKILLS: TechSkill[] = [
     proficiency: 95,
     years: '5+ Yrs',
     level: 'Expert',
-    gradient: 'linear-gradient(90deg, #059669 0%, #10b981 50%, #34d399 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
     isFeatured: true,
   },
   {
@@ -75,16 +52,7 @@ const TECH_SKILLS: TechSkill[] = [
     proficiency: 96,
     years: '5+ Yrs',
     level: 'Expert',
-    gradient: 'linear-gradient(90deg, #8b5cf6 0%, #a855f7 50%, #d946ef 100%)',
-    isFeatured: true,
-  },
-  {
-    name: 'Payment & Webhooks (Stripe, PayPal, Razorpay)',
-    category: 'Fintech & Transaction Processing',
-    proficiency: 94,
-    years: '4+ Yrs',
-    level: 'Expert',
-    gradient: 'linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #f97316 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
     isFeatured: true,
   },
   {
@@ -93,15 +61,8 @@ const TECH_SKILLS: TechSkill[] = [
     proficiency: 85,
     years: '4+ Yrs',
     level: 'Experienced',
-    gradient: 'linear-gradient(90deg, #64748b 0%, #94a3b8 50%, #cbd5e1 100%)',
-  },
-  {
-    name: 'React.js, Tailwind CSS & Redux Toolkit',
-    category: 'Client Interface & State',
-    proficiency: 90,
-    years: '4+ Yrs',
-    level: 'Advanced',
-    gradient: 'linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
+    isFeatured: true,
   },
   {
     name: 'SQL Databases (PostgreSQL / MySQL)',
@@ -109,7 +70,7 @@ const TECH_SKILLS: TechSkill[] = [
     proficiency: 86,
     years: '3+ Yrs',
     level: 'Advanced',
-    gradient: 'linear-gradient(90deg, #2563eb 0%, #0284c7 50%, #06b6d4 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
   },
   {
     name: 'Git, GitHub, CI/CD & Docker Deployment',
@@ -117,7 +78,7 @@ const TECH_SKILLS: TechSkill[] = [
     proficiency: 90,
     years: '5+ Yrs',
     level: 'Advanced',
-    gradient: 'linear-gradient(90deg, #ea580c 0%, #f97316 50%, #fb923c 100%)',
+    gradient: PROGRESS_BAR_GRADIENT,
   },
 ];
 
@@ -132,7 +93,7 @@ export const SkillsSection: React.FC = () => {
           badgeIcon={Cpu}
           title="Skills calibrated for"
           gradientWord="scale and reliability."
-          subtitle="Real-world production proficiency across backend architectures, databases, and modern full-stack workflows."
+          subtitle="Real-world production proficiency across Node.js backend architectures, TypeScript systems, and database engineering."
         />
 
         {/* Master Skills Glass Card Container */}
@@ -221,7 +182,7 @@ export const SkillsSection: React.FC = () => {
           <div className="mt-10 pt-6 border-t border-dashed border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-[#8C93A0] relative z-10">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-violet-400 shrink-0" />
-              <span>Full-lifecycle production readiness across Node.js & full-stack ecosystems.</span>
+              <span>Full-lifecycle production readiness across Node.js, TypeScript & backend architectures.</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1.5 text-[#ECEFF2]">

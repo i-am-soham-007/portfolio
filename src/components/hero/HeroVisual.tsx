@@ -25,7 +25,7 @@ export const HeroVisual: React.FC = () => {
         className="absolute -top-5 -right-2 sm:-right-5 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.04] backdrop-blur-xl border border-dashed border-white/20 text-[#E0E3E8] text-xs font-mono shadow-[0_8px_30px_rgba(0,0,0,0.6)] hover:border-white/40 transition-all cursor-default"
       >
         <Server className="w-3.5 h-3.5 text-zinc-300" />
-        <span className="text-[#ECEFF2] font-semibold">Node.js Core</span>
+        <span className="text-[#ECEFF2] font-semibold">Node.js + TypeScript</span>
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
       </motion.div>
 
@@ -102,10 +102,10 @@ export const HeroVisual: React.FC = () => {
                 <span className="text-[#D1D5DB]">"5+ years professional"</span>,
               </div>
               <div className="pl-4">
-                <span className="text-[#7D8593]">backendSpecialization:</span> [
+                <span className="text-[#7D8593]">mainTechStack:</span> [
               </div>
               <div className="pl-8 text-[#E2E8F0] font-medium">
-                "Node.js", "Express.js", "MongoDB", "NestJS", "REST APIs"
+                "Node.js", "TypeScript", "Express.js", "MongoDB", "REST APIs"
               </div>
               <div className="pl-4">],</div>
               <div className="pl-4">

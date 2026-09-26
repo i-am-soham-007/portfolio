@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { useTheme } from '../../context/ThemeContext';
 
 interface LiquidBackgroundProps {
-  intensity?: 'subtle' | 'medium' | 'vibrant' | 'low';
+  intensity?: 'subtle' | 'medium' | 'vibrant';
 }
 
 export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 'medium' }) => {
@@ -12,7 +12,6 @@ export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 
 
   const opacityMap = {
     subtle: 'opacity-25',
-    low: 'opacity-15',
     medium: 'opacity-40',
     vibrant: 'opacity-55'
   };
@@ -45,7 +44,6 @@ export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          style={{ willChange: "transform" }}
           className={`absolute top-[-10%] left-[10%] w-[450px] h-[450px] md:w-[650px] md:h-[650px] rounded-full bg-gradient-to-tr ${tokens.blobColors[0]} transition-all duration-700`}
         />
 
@@ -62,7 +60,6 @@ export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 
             ease: "easeInOut",
             delay: 2
           }}
-          style={{ willChange: "transform" }}
           className={`absolute top-[25%] right-[-5%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-gradient-to-br ${tokens.blobColors[1]} transition-all duration-700`}
         />
 
@@ -79,7 +76,6 @@ export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 
             ease: "easeInOut",
             delay: 4
           }}
-          style={{ willChange: "transform" }}
           className={`absolute top-[65%] left-[20%] w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-t ${tokens.blobColors[2]} transition-all duration-700`}
         />
 
@@ -96,7 +92,6 @@ export const LiquidBackground: React.FC<LiquidBackgroundProps> = ({ intensity = 
             ease: "easeInOut",
             delay: 1
           }}
-          style={{ willChange: "transform" }}
           className={`absolute bottom-[-10%] right-[15%] w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full bg-gradient-to-tl ${tokens.blobColors[3]} transition-all duration-700`}
         />
       </div>

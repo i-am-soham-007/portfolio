@@ -5,13 +5,13 @@ import {
   Database, 
   Layers, 
   Sparkles, 
-  CheckCircle2, 
   Compass, 
   Cpu, 
   Zap, 
   ShieldCheck, 
   CreditCard,
-  Code2
+  Code2,
+  ArrowUpRight
 } from 'lucide-react';
 import { PHILOSOPHY_STEPS, PERSONAL_INFO } from '../../data/portfolioData';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -31,7 +31,7 @@ export const AboutSection: React.FC = () => {
     { title: "RESTful API Architecture", desc: "Semantic endpoints with predictable contracts, DTO validation, and standardized JSON payloads.", icon: Layers },
     { title: "Database Engineering", desc: "High-performance MongoDB aggregation pipelines, compound indexing, and relational schemas.", icon: Database },
     { title: "Payment & Webhook Ingestion", desc: "Cryptographic signature validation, deduplication locks, and idempotent event listeners.", icon: CreditCard },
-    { title: "Modern Full-Stack Delivery", desc: "Connecting fast backends with responsive, accessible Next.js & React client interfaces.", icon: Code2 },
+    { title: "Type-Safe Backend Systems", desc: "Strict TypeScript contracts, schema validation, and end-to-end data integrity.", icon: Code2 },
     { title: "AI-Assisted Engineering", desc: "Leveraging generative tools to accelerate prototyping, test coverage, and architecture reviews.", icon: Sparkles },
   ];
 
@@ -62,12 +62,18 @@ export const AboutSection: React.FC = () => {
             <GlassCard className="p-8 sm:p-10 h-full flex flex-col justify-between relative overflow-hidden group">
               <div className="space-y-4 text-sm sm:text-base text-[#8C93A0] leading-relaxed relative z-10">
                 <p>
-                  I'm <strong className="text-[#ECEFF2] font-semibold">{PERSONAL_INFO.name}</strong>, a Senior Software Engineer who approaches development with an unwavering <strong className="text-[#ECEFF2] font-semibold">backend-first mindset</strong>.
+                  I'm <strong className="text-[#ECEFF2] font-semibold"><a
+                    href={PERSONAL_INFO.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#ECEFF2] hover:text-white underline decoration-cyan-400/50 hover:decoration-cyan-400 transition-all inline-flex items-center gap-1 group/name cursor-pointer"
+                    title="Open Senior Software Developer Soham Rathod Resume in new tab"
+                  ><span>{PERSONAL_INFO.name}</span><ArrowUpRight className="w-3.5 h-3.5 text-cyan-400 opacity-70 group-hover/name:opacity-100 group-hover/name:translate-x-0.5 group-hover/name:-translate-y-0.5 transition-all inline" /></a></strong>, a Senior Software Engineer who approaches development with an unwavering <strong className="text-[#ECEFF2] font-semibold">backend-first mindset</strong>.
                 </p>
                 <p>
-                  While I build complete full-stack applications with <strong className="text-[#ECEFF2] font-semibold">Next.js and React</strong>, 
-                  my core expertise is focused on <strong className="text-[#ECEFF2] font-semibold">Node.js, Express.js, and MongoDB</strong> distributed backend systems. 
-                  I architect the invisible foundations that make applications fast, secure, and resilient under real traffic.
+                  As a dedicated <strong className="text-[#ECEFF2] font-semibold">Node.js & TypeScript expert</strong>, 
+                  my core specialization is focused on <strong className="text-[#ECEFF2] font-semibold">Node.js, Express.js, and MongoDB</strong> distributed backend architectures and high-throughput APIs. 
+                  I architect the invisible foundations that make server-side applications fast, secure, and resilient under real traffic.
                 </p>
                 <p>
                   My engineering philosophy is rooted in building deterministic systems: robust database schema design, bulletproof error handling, secure token-based authentication, and payment flows that never lose state.
@@ -82,10 +88,6 @@ export const AboutSection: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <Cpu className="w-4 h-4 text-indigo-400" />
                   <span>5+ Years Specialized</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                  <span>Zero-Downtime Releases</span>
                 </div>
               </div>
             </GlassCard>
@@ -151,8 +153,8 @@ export const AboutSection: React.FC = () => {
                   <GlassCard className="p-6 h-full flex flex-col justify-between group hover:border-white/20 transition-all">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="font-mono text-xs text-[#8C93A0]">
-                          PHASE_0{idx + 1}
+                        <span className="font-mono text-xs font-semibold text-cyan-400/80">
+                          {step.number}
                         </span>
                         <div className="w-8 h-8 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#ECEFF2] group-hover:scale-110 transition-transform">
                           <Icon className="w-4 h-4" />

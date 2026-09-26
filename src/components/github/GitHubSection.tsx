@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Github, Star, GitFork, ExternalLink, Terminal } from 'lucide-react';
-import { PERSONAL_INFO, GITHUB_REPOS_STATIC } from '../../data/portfolioData';
+import { Github, ExternalLink, GitBranch, Terminal, FolderGit2 } from 'lucide-react';
+import { PERSONAL_INFO } from '../../data/portfolioData';
 import { SectionHeading } from '../ui/SectionHeading';
 import { GlassCard } from '../ui/GlassCard';
 import { MagneticButton } from '../ui/MagneticButton';
@@ -14,11 +14,11 @@ export const GitHubSection: React.FC = () => {
         
         {/* Section Heading */}
         <SectionHeading
-          badge="Open Source & Codebase"
+          badge="Verified Codebase"
           badgeIcon={Github}
-          title="Open Source &"
-          gradientWord="GitHub activity."
-          subtitle="Explore backend boilerplates, webhook handlers, and database toolkits crafted for the developer community."
+          title="Official GitHub &"
+          gradientWord="Repository Hub."
+          subtitle="Explore all my public projects, backend boilerplates, and open-source contributions directly on my official GitHub profile."
         />
 
         {/* GitHub Highlight Card */}
@@ -27,117 +27,94 @@ export const GitHubSection: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
         >
-          <GlassCard className="p-6 sm:p-8 bg-[#0a0a14]/90 border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group">
-            <div className="flex items-center gap-4 relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#ECEFF2] shrink-0 shadow-[0_4px_15px_rgba(0,0,0,0.4)] group-hover:border-white/25 transition-all">
-                <Github className="w-7 h-7" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#ECEFF2] font-mono">
-                    @i-am-soham-007
-                  </h3>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.04] text-[#ECEFF2] border border-white/10">
-                    Verified Profile
-                  </span>
+          <GlassCard className="p-6 sm:p-8 md:p-10 bg-[#0a0a14]/90 border-white/10 relative overflow-hidden group">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
+              
+              {/* Profile Details */}
+              <div className="flex items-start sm:items-center gap-5">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/[0.04] border border-white/15 flex items-center justify-center text-[#ECEFF2] shrink-0 shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:border-white/30 group-hover:scale-105 transition-all">
+                  <Github className="w-8 h-8 sm:w-10 sm:h-10 text-[#ECEFF2]" />
                 </div>
-                <p className="text-xs sm:text-sm text-[#8C93A0] mt-1">
-                  Senior Software Engineer specializing in Node.js, Express, and MongoDB.
-                </p>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#ECEFF2] font-mono tracking-tight">
+                      @i-am-soham-007
+                    </h3>
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 inline-flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Active Profile
+                    </span>
+                  </div>
+                  <p className="text-sm text-[#8C93A0] max-w-xl leading-relaxed">
+                    Senior Software Engineer specializing in scalable Node.js, Express, MongoDB, and TypeScript architectures. All personal project repositories and open-source codebases are published directly here.
+                  </p>
+                  
+                  {/* Focus Highlights */}
+                  <div className="flex flex-wrap items-center gap-4 mt-4 text-xs font-mono text-[#8C93A0]">
+                    <span className="flex items-center gap-1.5 text-[#D8DCE2]">
+                      <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                      Node.js & TypeScript
+                    </span>
+                    <span className="flex items-center gap-1.5 text-[#D8DCE2]">
+                      <GitBranch className="w-3.5 h-3.5 text-indigo-400" />
+                      Production APIs
+                    </span>
+                    <span className="flex items-center gap-1.5 text-[#D8DCE2]">
+                      <FolderGit2 className="w-3.5 h-3.5 text-violet-400" />
+                      Project Repositories
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
+                <MagneticButton
+                  variant="glow"
+                  size="md"
+                  href={PERSONAL_INFO.github}
+                  external
+                  className="font-mono text-xs tracking-wider"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Visit GitHub Profile</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
+                </MagneticButton>
+
+                <MagneticButton
+                  variant="secondary"
+                  size="md"
+                  href={`${PERSONAL_INFO.github}?tab=repositories`}
+                  external
+                  className="font-mono text-xs tracking-wider"
+                >
+                  <FolderGit2 className="w-4 h-4" />
+                  <span>Repositories</span>
+                </MagneticButton>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 relative z-10">
-              <MagneticButton
-                variant="glow"
-                size="md"
-                href={PERSONAL_INFO.github}
-                external
-                className="font-mono text-xs tracking-wider"
-              >
-                <span>Visit GitHub Profile</span>
-                <ExternalLink className="w-4 h-4" />
-              </MagneticButton>
+            {/* Bottom URL Verification Bar */}
+            <div className="mt-8 pt-6 border-t border-dashed border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-[#8C93A0]">
+              <div className="flex items-center gap-2">
+                <span className="text-zinc-500">Official URL:</span>
+                <a
+                  href={PERSONAL_INFO.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                >
+                  {PERSONAL_INFO.github}
+                  <ExternalLink className="w-3 h-3 inline" />
+                </a>
+              </div>
+              <span className="text-zinc-500">
+                Direct access to source code, commits, and releases
+              </span>
             </div>
           </GlassCard>
         </motion.div>
-
-        {/* Featured Repository Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {GITHUB_REPOS_STATIC.map((repo, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -5 }}
-            >
-              <GlassCard className="p-6 h-full flex flex-col justify-between group hover:border-white/20 transition-all">
-                <div>
-                  <div className="flex items-start justify-between gap-2 mb-3">
-                    <a
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base font-bold text-[#ECEFF2] font-mono group-hover:text-white transition-colors flex items-center gap-1.5"
-                    >
-                      <Terminal className="w-4 h-4 text-[#8C93A0]" />
-                      <span>{repo.name}</span>
-                    </a>
-                    <a
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-500 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/[0.04]"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-[#8C93A0] leading-relaxed mb-4">
-                    {repo.description}
-                  </p>
-                </div>
-
-                <div>
-                  {/* Topics Chips */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {repo.topics.map((top, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.025] text-[#8C93A0] border border-white/[0.06]"
-                      >
-                        #{top}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Metadata Bar */}
-                  <div className="pt-3 border-t border-dashed border-white/10 flex items-center justify-between text-xs font-mono text-[#8C93A0]">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-white/70" />
-                      <span className="text-[#D8DCE2]">{repo.language}</span>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <span className="flex items-center gap-1 text-[#D8DCE2]">
-                        <Star className="w-3.5 h-3.5 text-zinc-400" />
-                        <span>{repo.stars}</span>
-                      </span>
-                      <span className="flex items-center gap-1 text-[#D8DCE2]">
-                        <GitFork className="w-3.5 h-3.5 text-zinc-400" />
-                        <span>{repo.forks}</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
     </SectionWrapper>

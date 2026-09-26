@@ -57,8 +57,8 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               transition={{ delay: 0.2, duration: 0.3 }}
               className="mt-6 flex flex-col items-center"
             >
-              <div className="text-xs font-mono text-zinc-400 tracking-widest uppercase mb-2">
-                Initializing Systems
+              <div className="text-xs font-mono text-zinc-400 tracking-wider mb-2">
+                Loading...
               </div>
               <div className="w-36 h-[2px] bg-zinc-800 rounded-full overflow-hidden">
                 <motion.div
