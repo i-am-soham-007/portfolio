@@ -414,6 +414,36 @@ export const PROJECTS: Project[] = [
       { title: "Instant Notification", description: "Dispatches alerts to operations team via email & WhatsApp gateway", tech: "Messaging Webhook", type: "service" },
       { title: "Production Hosting", description: "Zero-downtime DNS, SSL encryption, and high-speed server configuration", tech: "subhlabhgc.com Live Host", type: "database" }
     ]
+  },
+  {
+    id: "codelens",
+    title: "CodeLens — Next-Gen Developer Utilities",
+    category: "frontend",
+    categoryLabel: "Personal Project",
+    tagline: "High-performance, privacy-first developer tools running completely in-browser via WebAssembly.",
+    description: "CodeLens helps developers inspect JSON, compare code, validate API payloads, and review files in-browser using high-performance, privacy-first tools. Built with Monaco Editor and WebAssembly for native-level performance inside your browser without any server tracking.",
+    problem: "Developers needed an offline-capable, privacy-first suite of tools to format JSON, compare code diffs, and decode tokens without sending proprietary data to a backend server.",
+    solution: "Developed a Next-Gen Developer Utilities suite comprising JSON Viewer, Code Compare, Currency Converter, and JWT Decoder running entirely client-side.",
+    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Monaco Editor", "WebAssembly"],
+    integrations: ["PWA", "Client-Side Processing"],
+    features: [
+      "Online JSON Viewer and Formatter with 5MB file upload validation",
+      "Online Text Compare supporting side-by-side diffs with Monaco engine",
+      "Base64 and JWT Payload Decoders",
+      "Works Offline as a PWA, entirely client-side privacy-first",
+      "Zero loading states and instant execution"
+    ],
+    role: "Creator & Lead Developer",
+    liveUrl: "https://codelens-dev.vercel.app/",
+    githubUrl: "https://github.com/i-am-soham-007",
+    featured: true,
+    status: "live",
+    architectureSteps: [
+      { title: "Client UI", description: "Modern React-based UI for switching between developer utilities", tech: "Next.js & Tailwind", type: "client" },
+      { title: "Editor Engine", description: "Handles large text diffs and syntax highlighting natively", tech: "Monaco Editor", type: "service" },
+      { title: "Local Processing", description: "Performs transformations and JSON parsing in browser memory", tech: "WebAssembly / JS", type: "gateway" },
+      { title: "Edge Deployment", description: "High-speed static asset delivery via edge network", tech: "Vercel", type: "database" }
+    ]
   }
 ];
 

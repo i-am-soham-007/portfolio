@@ -22,14 +22,14 @@ export const HeroSection: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center my-auto">
-        <div className="max-w-4xl py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-8 sm:py-12 w-full">
           
           {/* Typography, Badges, CTAs, Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start text-left"
+            className="flex flex-col items-start text-left max-w-2xl"
           >
             {/* Status Pill Badge */}
             <div className="bg-[#0d0f18]/80 backdrop-blur-xl border border-white/10 rounded-full px-4 py-1.5 inline-flex items-center gap-2 mb-6 hover:border-white/20 transition-all shadow-[0_4px_24px_rgba(0,0,0,0.6)] cursor-default">
@@ -47,7 +47,7 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Sub-headline / Manifesto */}
-            <p className="text-base sm:text-lg text-[#8C93A0] max-w-2xl leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-[#8C93A0] max-w-xl leading-relaxed mb-8">
               Specialized in building high-throughput <strong className="text-[#ECEFF2] font-medium">Node.js & TypeScript</strong> backends, 
               robust <strong className="text-[#ECEFF2] font-medium">Express & MongoDB</strong> systems, 
               and scalable, resilient REST APIs.
@@ -75,21 +75,29 @@ export const HeroSection: React.FC = () => {
               </MagneticButton>
             </div>
 
-            {/* Live Metrics Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 w-full max-w-2xl">
-              <GlassCard className="p-4 sm:p-5" glowOnHover={false}>
-                <div className="text-2xl sm:text-3xl font-bold font-display text-[#ECEFF2]">5+ Years</div>
-                <div className="text-xs text-[#8C93A0] mt-0.5">Professional Experience</div>
+          </motion.div>
+
+          {/* Right Side: Live Metrics Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex w-full h-full justify-center items-center"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-lg">
+              <GlassCard className="p-6 sm:p-8 flex flex-col justify-center items-center text-center shadow-xl hover:scale-105 transition-transform duration-300" glowOnHover={true}>
+                <div className="text-4xl sm:text-5xl font-bold font-display text-[#ECEFF2] mb-2">5+ Years</div>
+                <div className="text-sm text-[#8C93A0]">Professional Experience</div>
               </GlassCard>
 
-              <GlassCard className="p-4 sm:p-5" glowOnHover={false}>
-                <div className="text-2xl sm:text-3xl font-bold font-display text-cyan-400">Node + TS</div>
-                <div className="text-xs text-[#8C93A0] mt-0.5">Main Tech Stack</div>
+              <GlassCard className="p-6 sm:p-8 flex flex-col justify-center items-center text-center shadow-xl hover:scale-105 transition-transform duration-300" glowOnHover={true}>
+                <div className="text-4xl sm:text-5xl font-bold font-display text-cyan-400 mb-2">Node + TS</div>
+                <div className="text-sm text-[#8C93A0]">Main Tech Stack</div>
               </GlassCard>
 
-              <GlassCard className="p-4 sm:p-5 col-span-2 sm:col-span-1" glowOnHover={false}>
-                <div className="text-2xl sm:text-3xl font-bold font-display text-[#ECEFF2]">REST APIs</div>
-                <div className="text-xs text-[#8C93A0] mt-0.5">Core Architecture</div>
+              <GlassCard className="p-6 sm:p-8 sm:col-span-2 flex flex-col justify-center items-center text-center shadow-xl hover:scale-105 transition-transform duration-300" glowOnHover={true}>
+                <div className="text-4xl sm:text-5xl font-bold font-display text-[#ECEFF2] mb-2">REST APIs</div>
+                <div className="text-sm text-[#8C93A0]">Core Architecture Focus</div>
               </GlassCard>
             </div>
           </motion.div>
